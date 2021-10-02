@@ -17,7 +17,7 @@
 
 body {
   font-family: "Poppins-Regular";
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
   color: #999; }
 
@@ -74,7 +74,7 @@ select {
 
 h3 {
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 36px;
   font-family: "Poppins-Medium";
   color: #3e91f7;
   letter-spacing: 3px;
@@ -96,7 +96,7 @@ h3 {
   .form-wrapper label {
     display: block;
     font-family: "Muli-SemiBold";
-    font-size: 17px;
+    font-size: 18px;
     color: #4c4c4c;
     margin-bottom: 8px; }
   .form-wrapper i.zmdi-chevron-down {

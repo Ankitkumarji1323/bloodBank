@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Book A Room</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'fonts/linearicons/style.css' %}">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="{% static 'vendor/date-picker/css/datepicker.min.css' %}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+		 <!-- Bootstrap CSS -->
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+		 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<a href="/login" class="btn btn-primary">login</a>
+			<a href="/signup" class="btn btn-primary">Signup</a>
+			<div class="inner">
+				<form action="">
+					<h3>Find a Room</h3>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Name *</label>
+							<input type="text" class="form-control" placeholder="Your Name">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Phone *</label>
+							<input type="text" class="form-control" placeholder="Phone">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Check-in *</label>
+							<span class="lnr lnr-calendar-full"></span>
+							<input type="text" class="form-control datepicker-here" data-language='en' data-date-format="dd M yyyy" id="dp1">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Check-out *</label>
+							<span class="lnr lnr-calendar-full"></span>
+							<input type="text" class="form-control datepicker-here" data-language='en'  data-date-format="dd M yyyy" id="dp2">
+						</div>
+					</div>
+					<div class="form-row last">
+						<div class="form-wrapper">
+							<label for="">Adults *</label>
+							<select name="" id="" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Chidren *</label>
+							<select name="" id="" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> No one rejects, dislikes, or avoids pleasure itself.
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button data-text="Book Room">
+						<span>Book Room</span>
+					</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="container">
+			<h2 class="mt-5">Travel</h2>
+			<div class="row mt-3 mb-5">
+				{% for dest in dests %}
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img src="{{dest.image.url}}" class="card-img-top" alt="...">
+						{% if dest.offer %}
+						<span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+							offer
+						  </span>
+						  {% endif %}
+						<div class="card-body">
+						  <h5 class="card-title">{{dest.name}}</h5>
+						  <p class="card-text">{{dest.desc}}</p>
+						  <a href="#" class="btn btn-primary"><i class="fas fa-rupee-sign"></i> {{dest.price}}</a>
+						</div>
+					</div> 	
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="{% static 'vendor/date-picker/js/datepicker.js' %}"></script>
+		<script src="{% static 'vendor/date-picker/js/datepicker.en.js' %}"></script>
+
+		<script src="{% static 'js/main.js' %}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
